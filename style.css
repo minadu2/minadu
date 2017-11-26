@@ -508,6 +508,9 @@ figure.snip1132.hover h2 {
 .fila {
     float: left;
     width: 100%;
+		/*display: flex;
+		justify-content: center;
+		align-items: center;*/
 }
 .fila .block {
     float: left;
