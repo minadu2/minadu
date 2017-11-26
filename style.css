@@ -425,13 +425,14 @@ figure.snip1132.hover h2 {
 	line-height: 36px;
 	text-transform: uppercase;
 	margin-bottom: 27px;
+	font-size: 26px;
 }
 
 .servicio-texto{
 	text-align: center;
 	margin: 0 80px;
 	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
+	font-size: 20px;
 	text-rendering: optimizeLegibility;
 }
 
