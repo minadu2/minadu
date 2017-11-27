@@ -90,19 +90,25 @@ $(document).ready(function(){
 
 function registrar(){
   $(document).ready(function(){
-    const payload ={
-      correo: $("#correo").val(),
-      comentario: $("#comentario").val()
-    }
-    $.post( "https://dondecomemos-suscribe.herokuapp.com/v1/agregar", payload ).done(function(data){
-      if (data === 'ok') {
-        swal(
-          '¡Muchas Gracias!',
-          'Tus comentarios son valiosos para nosotros',
-          'success'
-        )
+    const correo = $("#correo").val();
+    const comentario = $("#comentario").val();
+
+    if (correo !== "" || comentario !== "") {
+      const payload ={
+        correo,
+        comentario
       }
-    });
+      $.post( "https://dondecomemos-suscribe.herokuapp.com/v1/agregar", payload ).done(function(data){
+        if (data === 'ok') {
+          swal(
+            '¡Muchas Gracias!',
+            'Tus comentarios son valiosos para nosotros',
+            'success'
+          )
+        }
+      });
+    }
+
     $("#correo").val("")
     $("#comentario").val("")
   });
