@@ -1,3 +1,4 @@
+// import swal from 'sweetalert2'
 $(document).ready(function(){
   $("#diseno1").click(function(){
     $("#diseno3").animate({
@@ -95,10 +96,56 @@ function registrar(){
     }
     $.post( "https://dondecomemos-suscribe.herokuapp.com/v1/agregar", payload ).done(function(data){
       if (data === 'ok') {
-        alert("MUCHAS GRACIAS!")
+        swal(
+          '¡Muchas Gracias!',
+          'Tus comentarios son valiosos para nosotros',
+          'success'
+        )
       }
     });
     $("#correo").val("")
     $("#comentario").val("")
   });
+}
+
+function comprar(){
+  swal({
+    title: 'No Hay Inventario',
+    html:
+    '<p>Lamentablemente no tenemos inventario disponible. Por favor te invitamos a dejar tu correo y un comentario y nosotros te avisaremos cuando tengamos disponibilidad.</p>'+
+    '<label for="swal-input1">Correo</label>'+
+    '<input id="swal-input1" class="swal2-input">' +
+    '<label for="swal-input2">Comentario</label>'+
+    '<input id="swal-input2" class="swal2-input">',
+    focusConfirm: false,
+    preConfirm: function () {
+      return new Promise(function (resolve) {
+        resolve([
+          $('#swal-input1').val(),
+          $('#swal-input2').val()
+        ])
+      })
+    }
+  }).then(function (result) {
+    console.log(result);
+    if (result.dismiss !== "esc") {
+      if (result.value[0] !== "" || result.value[1] !== "") {
+        const payload ={
+          correo: result.value[0],
+          comentario: result.value[1]
+        }
+        $.post( "https://dondecomemos-suscribe.herokuapp.com/v1/agregar", payload ).done(function(data){
+          if (data === 'ok') {
+            swal(
+              '¡Muchas Gracias!',
+              'Nosotros te avisaremos cuando tengamos inventario disponible',
+              'success'
+            )
+          }
+        });
+      }
+    }
+    // swal(JSON.stringify(result))
+  }).catch(swal.noop)
+
 }
