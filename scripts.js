@@ -113,9 +113,9 @@ function comprar(){
     title: 'No Hay Inventario',
     html:
     '<p>Lamentablemente no tenemos inventario disponible. Por favor te invitamos a dejar tu correo y un comentario y nosotros te avisaremos cuando tengamos disponibilidad.</p>'+
-    '<label for="swal-input1">Correo</label>'+
+    '<label for="swal-input1">Correo:</label>'+
     '<input id="swal-input1" class="swal2-input">' +
-    '<label for="swal-input2">Comentario</label>'+
+    '<label for="swal-input2">Comentario:</label>'+
     '<input id="swal-input2" class="swal2-input">',
     focusConfirm: false,
     preConfirm: function () {
