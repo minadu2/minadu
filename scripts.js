@@ -86,3 +86,19 @@ $(document).ready(function(){
     return false;
   });
 });
+
+function registrar(){
+  $(document).ready(function(){
+    const payload ={
+      correo: $("#correo").val(),
+      comentario: $("#comentario").val()
+    }
+    $.post( "https://dondecomemos-suscribe.herokuapp.com/v1/agregar", payload ).done(function(data){
+      if (data === 'ok') {
+        alert("MUCHAS GRACIAS!")
+      }
+    });
+    $("#correo").val("")
+    $("#comentario").val("")
+  });
+}

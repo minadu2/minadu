@@ -9,7 +9,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
-
+  <meta property="og:url"                content="https://minadu2.github.io/minadu/" />
+  <meta property="og:type"               content="website" />
+  <meta property="og:title"              content="¡Mi Nadü!" />
+  <meta property="og:description"        content="El huerto perfecto creado por ti, para ti." />
+  <meta property="og:image"              content="http://res.cloudinary.com/donde-comemos-hn/image/upload/q_auto:eco/v1510512545/Selecci%C3%B3n_169_sqhgw9.png" />
 </head>
 <body>
   <div class="section-principal">
@@ -577,7 +581,7 @@
            <div class="nadu-footer">
              <img src="./Assets/Logo.png" alt="MI N" class="logo-principal"><div class="adu">ADÜ</div>
            </div>
-               <p>Mi Nadu fue creado en StartUp Weekend celebrado en la Escuela Agrícola Panamericana Zamorano por ocho jóvenes emprendedores,siendo cuatro de Zamorano y cuatro de UNITEC.</p>
+               <p>Mi Nadu fue creado en StartUp Weekend celebrado en la Escuela Agrícola Panamericana El Zamorano por ocho jóvenes emprendedores,siendo cuatro de Zamorano y cuatro de UNITEC.</p>
                <p>© UNIZA, Todos los derechos reservados</p>
            </div>
          <div class="col-md-3 footer-nav animated fadeInUp">
@@ -602,9 +606,9 @@
          <div class="col-md-3 footer-social animated fadeInDown">
              <h4>Síguenos —</h4>
              <ul>
-                 <li><a href="#">Facebook</a></li>
+                 <li><a href="https://www.facebook.com/minaduorganico/">Facebook</a></li>
                  <li><a href="#">Twitter</a></li>
-                 <li><a href="#">Correo</a></li>
+                 <li><a href="mailto:uniza.minadu@gmail.com">Correo</a></li>
 
                </ul>
            </div>
@@ -614,13 +618,13 @@
                <p>
                    <div class="input-group">
                      <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
-                     <input type="text" class="form-control" placeholder="Correo">
+                     <input id="correo" type="text" class="form-control" placeholder="Correo">
                    </div>
                    <div class="input-group">
                      <div class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></div>
-                     <textarea type="text" class="form-control" placeholder="Comentario" rows="3"></textarea>
+                     <textarea id="comentario" type="text" class="form-control" placeholder="Comentario" rows="3"></textarea>
                    </div>
-                   <button type="button" class="btn btn-default btn-block">Enviar</button>
+                   <button type="button" class="btn btn-default btn-block" onclick="registrar()">Enviar</button>
                 </p>
            </div>
        </div>
